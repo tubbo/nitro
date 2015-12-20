@@ -19,6 +19,7 @@ gem 'autoprefixer-rails'
 gem 'turbolinks', github: 'rails/turbolinks'
 gem 'haml-rails'
 gem 'omniauth-github'
+gem 'octokit'
 
 #source 'https://rails-assets.org'
 
