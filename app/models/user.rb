@@ -1,6 +1,5 @@
+# Authentication model for Github-Auth'ed users into the system.
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :omniauthable, :registerable, :rememberable,
+         :trackable, :validatable, :confirmable
 end

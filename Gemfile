@@ -4,21 +4,21 @@ ruby '2.2.2'
 gem 'rails', '~> 4.2'
 gem 'pg'
 gem 'puma'
-gem 'sidekiq'
 gem 'controller_resources'
 gem 'responders'
 gem 'active_model_serializers'
 gem 'draper'
 gem 'simple_form'
 gem 'devise'
-
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'foundation-rails'
 gem 'uglifier',         '~> 1.3'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
-gem 'turbolinks' #, github: 'rails/turbolinks'
+gem 'turbolinks', github: 'rails/turbolinks'
+gem 'haml-rails'
+gem 'omniauth-github'
 
 #source 'https://rails-assets.org'
 
@@ -26,6 +26,8 @@ group :development do
   gem 'meta_request'
   gem 'quiet_assets'
   gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'spring-watcher-listen'
   gem 'web-console', '~> 2.0'
 end
 
@@ -42,5 +44,6 @@ end
 group :production do
   gem 'rack-cache'
   gem 'redis-rails'
-  gem 'asset_sync'
+  gem 'rails_12factor'
+  gem 'sidekiq'
 end
