@@ -2,23 +2,27 @@ class Release < ActiveRecord::Base
   belongs_to :project
 
   validates :project, presence: true
-  validates :github_release_id, presence: true
+  validates :ref, presence: true
 
-  delegate :tap, to: :project
+  delegate :homebrew_tap, :repository, to: :project
+  delegate :title, :description, to: :github_release
 
-  after_create :update_formula
+  after_create :create_github_release
 
   def github_release
     @github_release ||= Github::Release.find github_release_id
   end
 
-  def tap
-    "#{project.user.name}/homebrew-tap"
+  def formula
+    @formula ||= Homebrew::Formula.new(
+      homebrew_tap: homebrew_tap,
+      release: github_release
+    )
   end
 
   private
 
-  def update_formula
-    UpdateHomebrewFormula.perform_later self
+  def create_github_release
+    CreateGithubRelease.perform_later self
   end
 end
