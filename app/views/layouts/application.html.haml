@@ -1,0 +1,32 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? "#{yield(:title)} | nitro" : 'nitro'
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      %nav.top-bar
+        .top-bar-left
+          %ul.dropdown.menu{ data: { 'dropdown-menu' => true } }
+            %li.menu-text nitro
+            - if user_signed_in?
+              %li.has-submenu
+                = link_to t(:projects), projects_path
+                %ul.submenu.menu.vertical
+                  - current_user.projects.each do |project|
+                    %li= link_to project.name, project
+        .top-bar-right
+          - if user_signed_in?
+            %ul.dropdown.menu{ data: { 'dropdown-menu' => true } }
+              %li= link_to current_user.name, current_user
+              %li= link_to t(:sign_out), user_sign_out_path
+          - else
+            %ul.menu
+              %li= link_to t(:sign_in), user_sign_in_path
+    = yield

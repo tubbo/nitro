@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   devise :omniauthable, :registerable, :rememberable,
          :trackable, :validatable, :confirmable
 
+  validates :email, presence: true
+  validates :name,  presence: true
+  validates :image, presence: true
+
   # Create a new +User+ record from GitHub's +OmniAuth+ auth hash.
   #
   # @param [OmniAuth::AuthHash] auth

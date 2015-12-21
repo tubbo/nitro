@@ -20,6 +20,7 @@ gem 'turbolinks', github: 'rails/turbolinks'
 gem 'haml-rails'
 gem 'omniauth-github'
 gem 'octokit'
+gem 'pundit'
 
 #source 'https://rails-assets.org'
 
