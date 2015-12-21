@@ -1,3 +1,4 @@
+# Projects API. Create, destroy, and show projects.
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   resource :project

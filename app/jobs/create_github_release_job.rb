@@ -1,12 +1,15 @@
+# Creates a GitHub release via the API and assigns it to the given SHA,
+# then assigns the release ID back to the release record.
 class CreateGithubReleaseJob < ActiveJob::Base
-  queue_as :releases
+  queue_as :default
 
   def perform(release)
-    github_release = Github::Release.create(
-      repository: release.repository,
-      ref: release.ref
+    release.update(
+      github_release_id: Github::Release.create(
+        repo: release.repository,
+        ref: release.ref
+      ).id
     )
-    release.update github_release_id: github_release.id
-    release.tap.update release.formula
+    UpdateHomebrewTapJob.perform_later release
   end
 end

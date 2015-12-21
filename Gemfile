@@ -13,7 +13,7 @@ gem 'devise'
 gem 'sass-rails'
 gem 'sprockets-es6'
 gem 'foundation-rails'
-gem 'uglifier',         '~> 1.3'
+gem 'uglifier', '~> 1.3'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
 gem 'turbolinks', github: 'rails/turbolinks'
@@ -22,7 +22,7 @@ gem 'omniauth-github'
 gem 'octokit'
 gem 'pundit'
 
-#source 'https://rails-assets.org'
+# source 'https://rails-assets.org'
 
 group :development do
   gem 'meta_request'
@@ -31,11 +31,13 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen'
   gem 'web-console', '~> 2.0'
+  gem 'yard'
 end
 
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rubocop'
 end
 
 group :test do

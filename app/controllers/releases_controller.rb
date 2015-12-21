@@ -1,3 +1,4 @@
+# Releases API. Create and show releases.
 class ReleasesController < ApplicationController
   before_action :authenticate_user!
   expose :project

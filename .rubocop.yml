@@ -1,0 +1,32 @@
+AllCops:
+  RunRailsCops: true
+
+# Offense count: 3
+Lint/HandleExceptions:
+  Exclude:
+    - 'config/application.rb'
+    - 'lib/tasks/doc.rake'
+    - 'lib/tasks/lint.rake'
+
+# Offense count: 1
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/**/*.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/**/*.rb'
+
+Metrics/LineLength:
+  Exclude:
+    - 'config/**/*.rb'
+    - 'spec/**/*.rb'
+    - bin/spring
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'config/**/*.rb'
+    - 'db/migrate/**/*.rb'
+    - 'app/policies/**/*.rb'
+    - 'app/helpers/**/*.rb'

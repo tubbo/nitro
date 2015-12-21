@@ -1,3 +1,5 @@
+# Use +Draper+ to decorate resources in the HTML +DecentExposure+
+# methods. Authorize all resources with +Pundit+ policies.
 class ApplicationStrategy < DecentExposure::StrongParametersStrategy
   def collection_resource
     policy_scope super
@@ -10,8 +12,6 @@ class ApplicationStrategy < DecentExposure::StrongParametersStrategy
   end
 
   def resource
-    super.tap do |r|
-      r.decorate
-    end
+    super.tap(&:decorate)
   end
 end

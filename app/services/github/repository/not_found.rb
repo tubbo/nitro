@@ -1,5 +1,6 @@
 module Github
   class Repository
+    # Thrown when a repository cannot be found.
     class NotFound < RuntimeError
       def initialize(user, name)
         @user = user

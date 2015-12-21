@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-require "rails"
+require 'rails'
 
 %w(
   active_record
@@ -25,7 +25,7 @@ module Nitro
     config.app_generators.scaffold_controller :responders_controller
 
     # Use EST as our local time zone. (UTC is default)
-    #config.time_zone = 'Eastern Time (US & Canada)'
+    # config.time_zone = 'Eastern Time (US & Canada)'
 
     # Raise errors during transactional callback methods. This will be
     # the default in upcoming versions of Rails.
@@ -35,6 +35,6 @@ module Nitro
     config.log_level = :debug
 
     # Use localhost as mail server (for Devise)
-    #config.action_mailer.default_url_options = { host: 'localhost:3000' }
+    # config.action_mailer.default_url_options = { host: 'localhost:3000' }
   end
 end

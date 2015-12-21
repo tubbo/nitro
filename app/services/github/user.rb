@@ -1,4 +1,5 @@
 module Github
+  # Basic wrapper for a user on the GitHub API
   class User
     attr_reader :name
 

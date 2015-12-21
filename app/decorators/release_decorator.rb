@@ -1,3 +1,4 @@
+# Presents a Release for the HTML front-end.
 class ReleaseDecorator < Draper::Decorator
   delegate_all
 
@@ -9,5 +10,4 @@ class ReleaseDecorator < Draper::Decorator
   #       object.created_at.strftime("%a %m/%d/%y")
   #     end
   #   end
-
 end

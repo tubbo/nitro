@@ -1,4 +1,6 @@
 module Github
+  # Creates a commit on a given repo (usually the tap) to add a new
+  # change.
   class Commit
     attr_reader :repository
     attr_reader :message

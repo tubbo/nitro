@@ -1,4 +1,6 @@
 module Github
+  # Model wrapper for a GitHub Repository, can create and find repos as
+  # well as create releases.
   class Repository
     attr_reader :user
     attr_reader :name

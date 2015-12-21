@@ -1,4 +1,5 @@
 module Homebrew
+  # Communicates with the tap repository to update formulae
   class Tap
     # Conventional name used for all homebrew taps.
     NAME = 'homebrew-tap'
@@ -11,7 +12,7 @@ module Homebrew
       repo.files.include? "#{formula_name}.rb"
     end
 
-    def update(name, file, contents)
+    def update(name: '', file: '', contents: '')
       repo.commit "Update #{name}", file => contents
     end
 

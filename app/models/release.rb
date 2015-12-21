@@ -1,3 +1,5 @@
+# Model object for the release, tied to a project and storing its ref as
+# well as github release information.
 class Release < ActiveRecord::Base
   belongs_to :project
 

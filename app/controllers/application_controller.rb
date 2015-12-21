@@ -1,3 +1,4 @@
+# Base class for all HTTP API controllers.
 class ApplicationController < ActionController::Base
   include Pundit
 
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
   protected
 
   # Override Devise method for compatibility
-  def new_session_path(scope)
+  def new_session_path(_scope)
     new_user_session_path
   end
 end
